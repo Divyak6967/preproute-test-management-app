@@ -170,12 +170,13 @@ export function DashboardPage() {
         </Link>
 
         <button
-          type="button"
-          onClick={() => handleDelete(test.id)}
-        >
-          <Trash2 size={16} />
-          Delete
-        </button>
+  type="button"
+  disabled={deletingTestId === test.id}
+  onClick={() => handleDelete(test.id)}
+>
+  <Trash2 size={16} />
+  {deletingTestId === test.id ? 'Deleting...' : 'Delete'}
+</button>
       </div>
     </div>
   ))}
